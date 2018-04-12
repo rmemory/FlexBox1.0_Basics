@@ -1,17 +1,25 @@
 /* Some default styles to make each box visible */
 .box {
-	/* A few properties for the font */
+	/* A few properties for the font
+	   color is a foreground color for 
+	   whatever content is in the box */
 	color:white;
 	font-size: 100px;
 	text-align: center;
 	text-shadow:4px 4px 0 rgba(0,0,0,0.1);
 
 	/* padding properties are used to generate space around an element's content, 
-	   inside of any defined borders. */
+	   inside of any defined borders. 
+	   
+	   The box model, starting from the inside goes:
+	   element,
+	   padding,
+	   border,
+	   margin ... Adds white space */
 	padding:10px;
 }
 	
-	/* Colours for each box */
+	/* Colors for each box */
 	.box1 { background:#1abc9c;}
 	.box2 { background:#3498db;}
 	.box3 { background:#9b59b6;}
@@ -27,87 +35,17 @@
 	/* 
 	 * Declare a flex container
 	 * There are two ways to create a flex container 
+	 * 
+	 * A flex container always causes children to be flex items
+	 * 
+	 * By default, flex-direction is row.
+	 * 
+	 * The height of the container will match the tallest flex-item, and all others will 
+	 * stretch to match it, causing a uniform height of the container.
 	 */
-	display: flex; /* Takes up the entire line, automatically makes children be flex-items */
-	/* display: inline-flex; Only takes up the width it needs */
+	display: flex;  /* Container spans width of container */
+	/* display: inline-flex; Container only takes up as much width as flex-items require */
 
-	/* 
-	 * flex-direction
-	 */
-	/* flex-direction: column; Causes all flex children to be stacked main-axis vertically */
-	/* flex-direction: column-reverse; Causes all flex children to be stacked in reverse, main-axis vertically */
-	/* flex-direction: row; This is the default main-axis direction, ie. horizontal */
-	/* flex-direction: row-reverse; causes the direction to be reversed along the main axis */
-
-	/*
-	 * flex-wrap
-	 */
-
-	/* flex-wrap: nowrap; default */
-	/* flex-wrap: wrap; Causes each item to wrap to the next line as necessary. Note that each item (box) 
-						has a width of 100px (see above), thus three boxes per line, and because min-height
-						is used, it means it will take up the entire vertical size of the screen as well */
-	/* flex-wrap: wrap-reverse; Causes each item to wrap to the next line as necessary, starting at the bottom.
-								Note that each item (box) has a width of 100px (see above), thus three boxes 
-								per line, and because min-height is used, it means it will take up the entire 
-								vertical size of the screen as well */
-
-	/*
-	 * justify-content -> justification along main-axis
-	 */
-	 /* justify-content: flex-start; This is the default */
-	 /* justify-content: flex-end; Opposite of flex-start */
-	 /* justify-content: center; */
-	 /* justify-content: space-between; */
-	 /* justify-content: space-around; */
-
-	 /*
-	  * align-items -> justification along cross-axis 
-	  */
-	 /* align-items: center; Note that for this to do anything, the height of element must be larger
-							  than just the default */
-	 /* align-items: flex-end; */
-	 /* align-items: flex-start; */
-	 /* align-items: baseline; to see this one in effect, you'd need to set the font size for each box 
-								to be different from each other. */
-								
-	/* 
-	 * align-content, alignment along the cross axis. This is only visible if you have multiple
-	 * 				  lines of HTML (for example using flex-wrap)
-	 */
-	 /* align-content: flex-start; */
-	 /* align-content: flex-end; */
-	 /* align-content: center; */
-	 /* align-content: space-between; */
-	 /* align-content: space-around; */
-
-	/*
-	 * Non flex related properties
-	 */
 	/* This border is present just so we can see the borders of the container */
 	border: 10px solid goldenrod;
-
-	/* Not part of flex, just here so we take up the entire height of the screen,
-	   with out this, each div just takes up on the vertical amount it needs. See this for 
-	   an explanation of the difference between height and min-height:
-	   
-	 https://stackoverflow.com/questions/42077726/what-is-the-difference-between-min-height-and-height-property  */
-	/* min-height: 100vh; Causes the container to take up the entire height of the screen. */
 }
-
-.box {
-	/* flex: 1; Equal distribution between flex-items */
-}
-
-.box3 {
-	/* order:5;  Puts box3 on the end */
-}
-
-.box7 {
-	/* order:-2;  Note that text selection gets messed up */ 
-	/* 
-	 * align-self
-	 */
-	 align-self: flex-end;
-}
-	
