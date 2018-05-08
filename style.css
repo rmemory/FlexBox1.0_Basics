@@ -1,3 +1,30 @@
+.container {
+	/* 
+	 * Declare a flex container
+	 * There are two ways to create a flex container: flex and inline-flex. 
+	 *
+	 * flex means the width will match the width of the container (although by 
+	 * default justify-content is set to flex-start). While inline-flex means
+	 * the width will be only as large as the children, therefore nullifying 
+	 * any effect of justify-content.
+	 * 
+	 * A flex container always causes immediate children to be flex items
+	 * 
+	 * By default, flex-direction is row.
+	 * 
+	 * The height of the container will match the tallest flex-item, and all others will 
+	 * stretch to match it, causing a uniform height of the container.
+	 */
+	display: flex;  /* Container spans width of container */
+	/* display: inline-flex; Container only takes up as much width as flex-items require */
+
+	/* This border is present just so we can see the borders of the container */
+	border: 10px solid goldenrod;
+	
+	/* Artifically set the container height to match the height of the view port */
+	height: 100vh;
+}
+
 /* Some default styles to make each box visible */
 .box {
 	/* A few properties for the font
@@ -30,22 +57,3 @@
 	.box8 { background:#bdc3c7;}
 	.box9 { background:#2ecc71;}
 	.box10 { background:#16a085;}
-
-.container {
-	/* 
-	 * Declare a flex container
-	 * There are two ways to create a flex container 
-	 * 
-	 * A flex container always causes children to be flex items
-	 * 
-	 * By default, flex-direction is row.
-	 * 
-	 * The height of the container will match the tallest flex-item, and all others will 
-	 * stretch to match it, causing a uniform height of the container.
-	 */
-	display: flex;  /* Container spans width of container */
-	/* display: inline-flex; Container only takes up as much width as flex-items require */
-
-	/* This border is present just so we can see the borders of the container */
-	border: 10px solid goldenrod;
-}
